@@ -1,7 +1,7 @@
 from rest_framework.views import exception_handler
 
 HANDLERS = {
-    'NotAuthenticated': 'Учетные данные не были предоставлены',
+    'NotAuthenticated': 'Учетные данные не были предоставлены.',
     'Http404': 'Страница не найдена.',
     'PermissionDenied': (
         'У вас недостаточно прав для выполнения данного действия.'
