@@ -8,10 +8,7 @@ from rest_framework.viewsets import GenericViewSet
 
 from .permissions import AuthorOrReadOnly
 from .serializers import (
-    CommentSerializer,
-    FollowSerializer,
-    GroupSerializer,
-    PostSerializer,
+    CommentSerializer, FollowSerializer, GroupSerializer, PostSerializer,
 )
 
 
@@ -31,12 +28,10 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     @cached_property
     def comment_post(self):
-        post = get_object_or_404(Post, pk=self.kwargs['post_id'])
-        return post
+        return get_object_or_404(Post, pk=self.kwargs['post_id'])
 
     def get_queryset(self):
-        comments = self.comment_post.comments.all()
-        return comments
+        return self.comment_post.comments.all()
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user, post=self.comment_post)
