@@ -6,11 +6,11 @@
 
 Полное описание API [http://api.yatube.aveter77.site/redoc/](http://api.yatube.aveter77.site/redoc/)
 
-Все эндпоинты [http://api.yatube.aveter77.site/api/v1/](http://api.yatube.aveter77.site/api/v1/)
+Эндпоинты [http://api.yatube.aveter77.site/api/v1/](http://api.yatube.aveter77.site/api/v1/)
 
 Образ на [Dockerhub](https://hub.docker.com/r/aveter77/yatube_api/tags)
 
-## Алгоритм регистрации пользователей
+## Алгоритм получения токена
 Пользователь отправляет POST-запрос на эндпоинт `/api/v1/jwt/create/` с параметрами
 ```
 {
